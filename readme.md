@@ -1,12 +1,12 @@
 # PJ1说明文档
 
-----------
 >   吴可非 19302010012
+
 >   Github地址：[https://github.com/wukefei1/project1](https://github.com/wukefei1/project1)
+
 >   Github Pages地址：[https://wukefei1.github.io/project1/](https://wukefei1.github.io/project1/)
 
 ## 项目完成情况
-----------
 >   设计文档中提到的所有功能（包括bonus）均已完成
 
 ### 首页
@@ -90,7 +90,9 @@ function Zoom(obj, width, height) {
 ### 响应式布局
 * 移动设备适配
 在所有页面加入这行代码即可。
-`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
 
 * 不过分改变浏览器宽度
 js和css并用，主要思路是当宽度缩小到某个范围时改变布局或改变属性值,在必要的地方使用calc()来简化。

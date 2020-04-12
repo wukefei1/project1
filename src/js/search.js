@@ -20,8 +20,8 @@ function resize() {
 
     var x = document.getElementById("filter");
     var nav = document.getElementById("nav");
-    if (w < 600) {
-        nav.style.width = "600px";
+    if (w < 720) {
+        nav.style.width = "720px";
     } else {
         nav.style.width = "100%";
     }

@@ -10,8 +10,8 @@ function resize() {
     } else {
         x.style.width = w - 160 + "px";
     }
-    if (w < 600) {
-        nav.style.width = "600px";
+    if (w < 720) {
+        nav.style.width = "720px";
     } else {
         nav.style.width = "100%";
     }

@@ -96,8 +96,8 @@ function resize() {
     var row3 = document.getElementsByName("row3");
     var row4 = document.getElementsByName("row4");
     var nav = document.getElementById("nav");
-    if (w < 600) {
-        nav.style.width = "600px";
+    if (w < 720) {
+        nav.style.width = "720px";
     } else {
         nav.style.width = "100%";
     }

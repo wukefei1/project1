@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/browse.css">
+    <title>browse</title>
+    <script src="js/browse.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+    <div class='box'>
+        <header class='nav' id="nav">
+            <!-- 导航栏 -->
+            <ul>
+                <li>
+                    <a class='navigation' href="./login.html">
+                        <img src="./images/common/default.png" width="30" height="30">
+                    </a>
+                </li>
+                <li><a class='navigation' href="./home.html">首页</a></li>
+                <li><a class='navigation' href="./browse.html" id='chosen'>浏览</a></li>
+                <li><a class='navigation' href="./search.html">搜索</a></li>
+            </ul>
+            <div class='header_right'>
+                <ul>
+                    <a href="./login.html">
+                        <li class="show_list">
+                            <span>&#12288我的账户&#12288</span>
+                            <ul class="move_list">
+                                <li style="border-radius: 10px 10px 0px 0px;">
+                                    <a href="./upload.html">
+                                        &#12288<img class='h' src="./images/common/upload_w.png" width="20" height="20">&#12288上传
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./my_photos.html">
+                                        &#12288<img class='h' src="./images/common/my pictures_w.png" width="20" height="20">&#12288我的照片
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./my_favourite.html">
+                                        &#12288<img class='h' src="./images/common/my favourite_w.png" width="20" height="20">&#12288我的收藏
+                                    </a>
+                                </li>
+                                <li style="border-radius: 0px 0px 10px 10px;">
+                                    <a href="./login.html">
+                                        &#12288<img class='h' src="./images/common/log in_w.png" width="20" height="20">&#12288登录
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </header>
+
+        <br><br><br><br>
+        <aside style="top:97px">
+            <!-- 侧边栏 -->
+            <ul class='first'>按标题搜索</ul>
+            <ul class="last" style="padding: 0; height: 40px;text-indent: 0;">
+                <form name="form0" method="post" action="">
+                    <input type="text" name="search" required>
+                    <input type="submit" value="搜索" name="search" onclick="alert('搜索完成')"><br>
+                </form>
+            </ul><br>
+
+            <ul class='first'>热门内容</ul>
+            <ul><a href="#">风景</a></ul>
+            <ul><a href="#">城市</a></ul>
+            <ul><a href="#">居民</a></ul>
+            <ul><a href="#">动物</a></ul>
+            <ul><a href="#">建筑</a></ul>
+            <ul class="last"><a href="#">奇观</a></ul><br>
+
+            <ul class='first'>热门国家</ul>
+            <ul><a -href="#" onclick="changeCity(1)">中国</a></ul>
+            <ul><a -href="#" onclick="changeCity(2)">意大利</a></ul>
+            <ul><a -href="#" onclick="changeCity(3)">日本</a></ul>
+            <ul class="last"><a -href="#" onclick="changeCity(4)">美国</a></ul><br>
+
+            <ul class='first'>城市</ul>
+            <ul><a href="#" id="city1">上海</a></ul>
+            <ul><a href="#" id="city2">昆明</a></ul>
+            <ul><a href="#" id="city3">北京</a></ul>
+            <ul class="last"><a href="#" id="city4">烟台</a></ul>
+        </aside>
+
+        <div id="back-to-top" class="top_e">
+            <img src="./images/common/totop.png" width="40" height="40" id="img">
+        </div>
+        <div id="refresh" class="refresh_e">
+            <img src="./images/common/refresh.png" width="40" height="40" id="img" onclick="alert('图片已更新')">
+        </div>
+    </div>
+
+    <filter id="filter">
+        <!-- 过滤器 -->
+        <ul class="first">过滤器</ul>
+        <ul style="text-indent: 0px;">
+            <form name="form1" method="post" action="" style="position: relative;left: 20px;">
+                <select name="content" id="content">
+                    <option value="default-content">请选择内容</option>
+                    <option value="scenery">风景</option>
+                    <option value="city">城市</option>
+                    <option value="people">居民</option>
+                    <option value="animal">动物</option>
+                    <option value="building">建筑</option>
+                    <option value="wonder">奇观</option>
+                </select>
+                <select name="country" id="country" onchange="changeSelect(this.selectedIndex)"></select>
+                <select name="city" id="city"></select>
+                <input type="submit" value="过滤" name="filter" onclick="alert('过滤完成')">
+            </form>
+        </ul>
+        <ul style="height: 1020px;">
+            <table>
+                <tr>
+                    <td>
+                        <div name="row1">
+                            <a href="./details.html"><img src="../project1/images/browse/11.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row2">
+                            <a href="./details.html"><img src="../project1/images/browse/12.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row3">
+                            <a href="./details.html"><img src="../project1/images/browse/13.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row4">
+                            <a href="./details.html"><img src="../project1/images/browse/14.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div name="row1">
+                            <a href="./details.html"><img src="../project1/images/browse/21.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row2">
+                            <a href="./details.html"><img src="../project1/images/browse/22.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row3">
+                            <a href="./details.html"><img src="../project1/images/browse/23.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row4">
+                            <a href="./details.html"><img src="../project1/images/browse/24.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div name="row1">
+                            <a href="./details.html"><img src="../project1/images/browse/31.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row2">
+                            <a href="./details.html"><img src="../project1/images/browse/32.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row3">
+                            <a href="./details.html"><img src="../project1/images/browse/33.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row4">
+                            <a href="./details.html"><img src="../project1/images/browse/34.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div name="row1">
+                            <a href="./details.html"><img src="../project1/images/browse/41.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row2">
+                            <a href="./details.html"><img src="../project1/images/browse/42.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row3">
+                            <a href="./details.html"><img src="../project1/images/browse/43.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <div name="row4">
+                            <a href="./details.html"><img src="../project1/images/browse/44.jpg" onload="Zoom(this,220,220)"></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+        <ul class="last" style="border-top: none; height: 50px;">
+            <!-- 切换页面 -->
+            <div style="text-align: center;">
+                <span id="span">
+                    <a onclick="changePage('1')"><</a>
+                    <a id="now" onclick="changePage('1')">1</a>
+                    <a id="page2" onclick="changePage('2')">2</a>
+                    <a id="page3" onclick="changePage('3')">3</a>
+                    <a id="page4" onclick="changePage('4')">4</a>
+                    <a id="page5" onclick="changePage('5')">5</a>
+                    <a id="page6" onclick="changePage('6')">6</a>
+                    <a onclick="changePage('6')">></a>
+                </span>
+            </div>
+        </ul>
+    </filter>
+
+    <footer>
+        <br><br>Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：19302010012
+    </footer>
+</body>
+
+</html>

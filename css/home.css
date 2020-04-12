@@ -7,16 +7,15 @@
 .box table {
     position: relative;
     right: -80px;
-    border-style: solid none;
+    border-style: none none;
     border-width: 40px;
     border-color: rgba(0, 0, 0, 0);
     border-collapse: separate;
-    border-spacing: 40px 40px;
+    border-spacing: 40px;
 }
 
 .show {
     position: relative;
-    min-width: 400px;
     height: 430px;
     background: rgb(235, 245, 245);
     border-radius: 40px;
@@ -25,22 +24,23 @@
 
 .show div {
     position: relative;
+    bottom: 40px;
     left: 25px;
     border-radius: 15px;
     box-shadow: 1px 1px 1px 1px #888888;
 }
 
 .show .title {
-    position: relative;
-    right: -35px;
-    top: 0px;
+    position: absolute;
+    left: 25px;
+    bottom: 75px;
     font-size: 30px;
 }
 
 .show .content {
-    position: relative;
-    right: -35px;
-    top: 20px;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
     font-size: 20px;
 }
 
@@ -59,12 +59,11 @@ footer p {
     text-align: center;
     position: relative;
     top: 30px;
+    font-size: 15px;
 }
 
 footer img {
     position: absolute;
-    width: 40px;
-    height: 40px;
 }
 
 footer #myweixin {

@@ -4,7 +4,7 @@ function changeText(x) {
     var content = document.getElementById("content");
     if (x == 1) {
         title.disabled = false;
-        content.innerHTML = "";
+        content.value = "";
         content.disabled = "disable";
     } else if (x == 2) {
         title.value = "";

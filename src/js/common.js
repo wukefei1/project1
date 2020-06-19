@@ -1,3 +1,16 @@
+function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
+}
+
 $(document).ready(function() {
     //回到顶部的动画效果
     //首先将#back-to-top隐藏
@@ -22,14 +35,24 @@ $(document).ready(function() {
 });
 
 function changePage(str) {
-    //切换页面（暂时只有样式的变化）
+    //切换页面
     var now = document.getElementById("now");
-    now.id = "page" + now.innerHTML;
-    now.style.border = "1px solid #eaeaea;";
-    var s = "page" + str;
-    var after = document.getElementById(s);
-    after.id = "now";
-    after.style.border.style = "none";
+    if (now.innerHTML.toString != str) {
+        now.id = "page" + now.innerHTML;
+        now.style.border.style = "1px solid #eaeaea;";
+        var s = "page" + str;
+        var after = document.getElementById(s);
+        after.id = "now";
+        after.style.border.style = "none";
+
+        var Request = new Object();
+        Request = GetRequest();
+        if (!Request['pn']) {
+            location.href = window.location.href + ((window.location.href.indexOf("?") == -1) ? '?' : '&') + 'pn=' + (str - 1);
+        } else {
+            location.href = window.location.href.slice(0, window.location.href.length - 1) + (str - 1);
+        }
+    }
 }
 
 function Zoom(obj, width, height) {

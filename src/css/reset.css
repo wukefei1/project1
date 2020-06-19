@@ -8,7 +8,7 @@
 }
 
 * {
-    font-family: MyNewFont, 楷体;
+    font-family: Arial, 楷体;
 }
 
 html,
@@ -41,7 +41,6 @@ li {
 }
 
 a {
-    font-family: MyNewFont, 楷体;
     letter-spacing: 1.2px;
     text-decoration: none;
     color: rgb(0, 119, 255)
